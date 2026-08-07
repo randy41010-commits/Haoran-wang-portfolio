@@ -1,0 +1,40 @@
+const navigation = [
+  ["Info", "/info"],
+  ["Works", "/works"],
+  ["Video", "/video"],
+  ["Kontakt", "/kontakt"],
+];
+
+export function SiteHeader() {
+  return (
+    <header className="site-header">
+      <a className="wordmark" href="/" aria-label="ZHIMING 首页">ZHIMING</a>
+      <nav aria-label="主导航">
+        {navigation.map(([label, href], index) => (
+          <a href={href} key={href}><sup>0{index + 1}</sup>{label}</a>
+        ))}
+      </nav>
+      <span className="header-note">PORTFOLIO / 2026</span>
+    </header>
+  );
+}
+
+export function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <span>© 2026 ZHIMING</span>
+      <span>DESIGN · IMAGE · DIRECTION</span>
+      <a href="#top">Top ↑</a>
+    </footer>
+  );
+}
+
+export function PageIntro({ index, title, text }: { index: string; title: string; text: string }) {
+  return (
+    <header className="page-intro">
+      <span className="page-index">{index}</span>
+      <h1>{title}</h1>
+      <p>{text}</p>
+    </header>
+  );
+}

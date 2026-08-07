@@ -13,8 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ZHIMING — 独立设计师与创作者",
-  description: "专注品牌、数字产品与视觉体验的独立设计师个人作品集。",
+  title: { default: "ZHIMING — Designer & Visual Storyteller", template: "%s — ZHIMING" },
+  description: "ZHIMING 的个人作品档案：视觉设计、数字体验与动态图像。",
+  openGraph: {
+    title: "ZHIMING — Ideas in quiet motion.",
+    description: "视觉设计、数字体验与动态图像作品档案。",
+    images: ["https://zhiming-portfolio.randy41010.chatgpt.site/og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ZHIMING — Ideas in quiet motion.",
+    description: "视觉设计、数字体验与动态图像作品档案。",
+    images: ["https://zhiming-portfolio.randy41010.chatgpt.site/og.png"],
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
