@@ -18,13 +18,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ZHIMING — Ideas in quiet motion.",
     description: "视觉设计、数字体验与动态图像作品档案。",
-    images: ["https://zhiming-portfolio.randy41010.chatgpt.site/og.png"],
+    images: ["https://zhiming-portfolio.randy41010.chatgpt.site/og.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "ZHIMING — Ideas in quiet motion.",
     description: "视觉设计、数字体验与动态图像作品档案。",
-    images: ["https://zhiming-portfolio.randy41010.chatgpt.site/og.png"],
+    images: ["https://zhiming-portfolio.randy41010.chatgpt.site/og.jpg"],
   },
   icons: {
     icon: "/favicon.svg",
