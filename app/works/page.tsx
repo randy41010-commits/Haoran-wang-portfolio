@@ -1,17 +1,17 @@
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
 
 const works = [
-  { no: "001", title: "留白笔记", year: "2026", type: "Digital Product", tone: "tone-a", text: "面向创作者的知识整理空间，将碎片化灵感转化为可持续生长的个人档案。" },
-  { no: "002", title: "城市漫游", year: "2025", type: "Identity System", tone: "tone-b", text: "为城市探索者建立的一套路线品牌与数字导览系统。" },
-  { no: "003", title: "微光计划", year: "2025", type: "Campaign", tone: "tone-c", text: "连接独立创作者与真实需求的长期文化项目。" },
-  { no: "004", title: "之间", year: "2024", type: "Editorial", tone: "tone-d", text: "关于空间、距离与日常观察的影像出版实验。" },
+  { no: "001", title: "Blank Notes", year: "2026", type: "Digital Product", tone: "tone-a", text: "A knowledge space for artists, turning fragments of thought into a living personal archive." },
+  { no: "002", title: "Urban Drift", year: "2025", type: "Identity System", tone: "tone-b", text: "A route identity and digital guide created for independent urban exploration." },
+  { no: "003", title: "Low Light", year: "2025", type: "Campaign", tone: "tone-c", text: "A long-term cultural initiative connecting independent makers with meaningful commissions." },
+  { no: "004", title: "In Between", year: "2024", type: "Editorial", tone: "tone-d", text: "A photographic publishing experiment about space, distance and everyday observation." },
 ];
 
 export default function WorksPage() {
   return (
     <main className="site-frame" id="top">
       <SiteHeader />
-      <PageIntro index="02" title="Works" text="选择项目，2024—2026。每个项目均以研究、视觉与应用系统共同构成。" />
+      <PageIntro index="02" title="Works" text="Selected projects, 2024—2026. Each work brings research, image and applied systems together." />
       <section className="work-index">
         {works.map((work) => (
           <article className="work-row" key={work.no}>

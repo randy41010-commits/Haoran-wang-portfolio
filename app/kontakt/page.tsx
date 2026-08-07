@@ -4,7 +4,7 @@ export default function KontaktPage() {
   return (
     <main className="site-frame contact-page" id="top">
       <SiteHeader />
-      <PageIntro index="04" title="Kontakt" text="项目合作、展览、委托或只是交换一个有趣的想法。" />
+      <PageIntro index="05" title="Kontakt" text="For commissions, exhibitions, collaborations or simply an exchange of ideas." />
       <section className="kontakt-main">
         <p>Let’s make<br />something <em>clear.</em></p>
         <a className="mail-link" href="mailto:hello@example.com">hello@example.com <span>↗</span></a>

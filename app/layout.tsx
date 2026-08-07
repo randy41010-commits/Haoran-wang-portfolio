@@ -14,16 +14,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: { default: "ZHIMING — Designer & Visual Storyteller", template: "%s — ZHIMING" },
-  description: "ZHIMING 的个人作品档案：视觉设计、数字体验与动态图像。",
+  description: "The personal archive of ZHIMING: design, music and spatial installation.",
   openGraph: {
     title: "ZHIMING — Ideas in quiet motion.",
-    description: "视觉设计、数字体验与动态图像作品档案。",
+    description: "Design, music and spatial installation by ZHIMING.",
     images: ["https://zhiming-portfolio.randy41010.chatgpt.site/og.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "ZHIMING — Ideas in quiet motion.",
-    description: "视觉设计、数字体验与动态图像作品档案。",
+    description: "Design, music and spatial installation by ZHIMING.",
     images: ["https://zhiming-portfolio.randy41010.chatgpt.site/og.jpg"],
   },
   icons: {
@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

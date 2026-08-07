@@ -1,15 +1,16 @@
 const navigation = [
   ["Info", "/info"],
   ["Works", "/works"],
-  ["Video", "/video"],
+  ["Music", "/music"],
+  ["Installation", "/installation"],
   ["Kontakt", "/kontakt"],
 ];
 
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <a className="wordmark" href="/" aria-label="ZHIMING 首页">ZHIMING</a>
-      <nav aria-label="主导航">
+      <a className="wordmark" href="/" aria-label="ZHIMING home">ZHIMING</a>
+      <nav aria-label="Primary navigation">
         {navigation.map(([label, href], index) => (
           <a href={href} key={href}><sup>0{index + 1}</sup>{label}</a>
         ))}
