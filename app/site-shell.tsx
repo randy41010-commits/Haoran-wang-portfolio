@@ -9,13 +9,13 @@ const navigation = [
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <a className="wordmark" href="/" aria-label="ZHIMING home">ZHIMING</a>
+      <a className="wordmark" href="/" aria-label="Haoran Wang home">HAORAN WANG</a>
       <nav aria-label="Primary navigation">
         {navigation.map(([label, href], index) => (
           <a href={href} key={href}><sup>0{index + 1}</sup>{label}</a>
         ))}
       </nav>
-      <span className="header-note">PORTFOLIO / 2026</span>
+      <span className="header-note">SOUND / PORTFOLIO / 2026</span>
     </header>
   );
 }
@@ -23,8 +23,8 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <span>© 2026 ZHIMING</span>
-      <span>DESIGN · IMAGE · DIRECTION</span>
+      <span>© 2026 HAORAN WANG</span>
+      <span>MUSIC · SOUND · INSTALLATION</span>
       <a href="#top">Top ↑</a>
     </footer>
   );

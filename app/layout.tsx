@@ -13,17 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: { default: "ZHIMING — Designer & Visual Storyteller", template: "%s — ZHIMING" },
-  description: "The personal archive of ZHIMING: design, music and spatial installation.",
+  title: { default: "Haoran Wang — Sound Portfolio", template: "%s — Haoran Wang" },
+  description: "Music, sound and installation by Haoran Wang.",
   openGraph: {
-    title: "ZHIMING — Ideas in quiet motion.",
-    description: "Design, music and spatial installation by ZHIMING.",
+    title: "Haoran Wang — Sound in quiet motion.",
+    description: "Music, sound and installation by Haoran Wang.",
     images: ["https://zhiming-portfolio.randy41010.chatgpt.site/og.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZHIMING — Ideas in quiet motion.",
-    description: "Design, music and spatial installation by ZHIMING.",
+    title: "Haoran Wang — Sound in quiet motion.",
+    description: "Music, sound and installation by Haoran Wang.",
     images: ["https://zhiming-portfolio.randy41010.chatgpt.site/og.jpg"],
   },
   icons: {
