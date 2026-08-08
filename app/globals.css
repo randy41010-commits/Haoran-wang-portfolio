@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root { --black:#0a0a0a; --panel:#111; --paper:#e8e8e3; --muted:#8b8b86; --line:#2a2a28; --soft:#171716; }
+:root { --black:#0a0a0a; --panel:#111; --paper:#e8e8e3; --muted:#8b8b86; --line:#2a2a28; --soft:#171716; --font-geist-sans:Arial,Helvetica,sans-serif; --font-geist-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; background:var(--black); }
 body { margin:0; background:var(--black); color:var(--paper); font-family:var(--font-geist-sans),Arial,sans-serif; }
