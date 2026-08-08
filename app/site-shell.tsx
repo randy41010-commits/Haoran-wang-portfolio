@@ -9,10 +9,10 @@ const navigation = [
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <a className="wordmark" href="/" aria-label="Haoran Wang home">HAORAN WANG</a>
+      <Link className="wordmark" href="/" aria-label="Haoran Wang home">HAORAN WANG</Link>
       <nav aria-label="Primary navigation">
         {navigation.map(([label, href], index) => (
-          <a href={href} key={href}><sup>0{index + 1}</sup>{label}</a>
+          <Link href={href} key={href}><sup>0{index + 1}</sup>{label}</Link>
         ))}
       </nav>
       <span className="header-note">SOUND / PORTFOLIO / 2026</span>
@@ -39,3 +39,4 @@ export function PageIntro({ index, title, text }: { index: string; title: string
     </header>
   );
 }
+import Link from "next/link";
