@@ -1,4 +1,5 @@
 import { SiteFooter, SiteHeader } from "./site-shell";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         </div>
         <h1><span>Sound</span><span>in quiet</span><span>motion.</span></h1>
         <p className="home-intro">Music producer and creator working across composition, sound art and spatial listening. Listening, research and encounter shape each project.</p>
-        <a className="enter-link" href="/music">Explore the work <span>↗</span></a>
+        <Link className="enter-link" href="/music">Explore the work <span>↗</span></Link>
       </section>
       <SiteFooter />
     </main>
