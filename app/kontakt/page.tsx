@@ -1,4 +1,5 @@
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
+import Link from "next/link";
 
 export default function KontaktPage() {
   return (
@@ -10,7 +11,7 @@ export default function KontaktPage() {
         <a className="mail-link" href="mailto:hello@example.com">hello@example.com <span>↗</span></a>
       </section>
       <section className="kontakt-grid">
-        <div><span>Social</span><a href="/">Instagram ↗</a><a href="/">LinkedIn ↗</a><a href="/">Xiaohongshu ↗</a></div>
+        <div><span>Social</span><Link href="/">Instagram ↗</Link><Link href="/">LinkedIn ↗</Link><Link href="/">Xiaohongshu ↗</Link></div>
         <div><span>Studio</span><p>Shanghai, China<br />CET / UTC+8</p></div>
         <div><span>Availability</span><p>Selected commissions<br />from September 2026</p></div>
       </section>
