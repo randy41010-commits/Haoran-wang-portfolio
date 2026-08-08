@@ -1,4 +1,5 @@
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
+import Link from "next/link";
 
 const works = [
   { no: "001", title: "Blank Notes", year: "2026", type: "Digital Product", tone: "tone-a", text: "A knowledge space for artists, turning fragments of thought into a living personal archive." },
@@ -20,7 +21,7 @@ export default function WorksPage() {
               <span>{work.type}</span><span>{work.year}</span>
               <h2>{work.title}</h2>
               <p>{work.text}</p>
-              <a href="/kontakt">Project details on request ↗</a>
+              <Link href="/kontakt">Project details on request ↗</Link>
             </div>
           </article>
         ))}
