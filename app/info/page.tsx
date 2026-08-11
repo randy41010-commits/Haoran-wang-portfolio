@@ -12,7 +12,7 @@ export default function InfoPage() {
         <div className="bio-copy">
           <p className="lead">I am Haoran Wang, a music producer and creator working across sound, music and artistic research.</p>
           <p>I graduated from the Shanghai Conservatory of Music, where I studied Music and Media. I am currently studying Sound and Reality at the Robert Schumann Hochschule Düsseldorf.</p>
-          <p>My work follows the ways sound can shape attention, memory and space. I approach each project as an open field for listening, composition and encounter.</p>
+          <p>I work across composition, music production and sound design. My practice often begins with rigorous traditional compositional techniques, while also extending into experimental theatre-making. As Martin Supper, my professor at the Berlin University of the Arts, puts it: “ROOM AS AN INSTRUMENT.” Every space is a singular, open field with its own capacity to sing.</p>
           <dl>
             <div><dt>Practice</dt><dd>Music Production<br />Sound Art<br />Composition<br />Creative Research</dd></div>
             <div><dt>Education</dt><dd>Shanghai Conservatory of Music<br />Robert Schumann Hochschule Düsseldorf</dd></div>
