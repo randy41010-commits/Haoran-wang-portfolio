@@ -6,8 +6,9 @@ export default function InfoPage() {
       <SiteHeader />
       <PageIntro index="01" title="Info" text="Background, education and areas of ongoing musical research." />
       <section className="info-layout">
-        <div className="portrait-field" aria-label="Portrait placeholder">
-          <span>PORTRAIT / ARCHIVE</span><i />
+        <div className="portrait-field">
+          <img src="/haoran-wang.jpg" alt="Haoran Wang on the coast" />
+          <span>PORTRAIT / ÉTRETAT, FR</span>
         </div>
         <div className="bio-copy">
           <p className="lead">I am Haoran Wang, a music producer and creator working across sound, music and artistic research.</p>
