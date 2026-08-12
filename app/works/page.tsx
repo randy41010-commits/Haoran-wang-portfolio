@@ -1,27 +1,33 @@
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
-import Link from "next/link";
 
 const works = [
-  { no: "001", title: "Blank Notes", year: "2026", type: "Digital Product", tone: "tone-a", text: "A knowledge space for artists, turning fragments of thought into a living personal archive." },
-  { no: "002", title: "Urban Drift", year: "2025", type: "Identity System", tone: "tone-b", text: "A route identity and digital guide created for independent urban exploration." },
-  { no: "003", title: "Low Light", year: "2025", type: "Campaign", tone: "tone-c", text: "A long-term cultural initiative connecting independent makers with meaningful commissions." },
-  { no: "004", title: "In Between", year: "2024", type: "Editorial", tone: "tone-d", text: "A photographic publishing experiment about space, distance and everyday observation." },
+  { no: "001", videoId: "IQ5qIJhRXFo", label: "Selected work / 2026" },
+  { no: "002", videoId: "hm10Rev353k", label: "Selected work / 2026" },
 ];
 
 export default function WorksPage() {
   return (
     <main className="site-frame" id="top">
       <SiteHeader />
-      <PageIntro index="02" title="Works" text="Selected projects, 2024—2026. Each work brings research, image and applied systems together." />
-      <section className="work-index">
+      <PageIntro index="02" title="Works" text="Selected audiovisual works. Composition, sound, image and spatial research." />
+      <section className="work-index" aria-label="Selected works">
         {works.map((work) => (
-          <article className="work-row" key={work.no}>
-            <div className={`work-media ${work.tone}`}><span>{work.no}</span><i /></div>
+          <article className="work-row work-video" key={work.no}>
+            <div className="work-media">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${work.videoId}`}
+                title={`Haoran Wang — work ${work.no}`}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+              <span>{work.no}</span>
+            </div>
             <div className="work-data">
-              <span>{work.type}</span><span>{work.year}</span>
-              <h2>{work.title}</h2>
-              <p>{work.text}</p>
-              <Link href="/kontakt">Project details on request ↗</Link>
+              <span>{work.label}</span><span>Video</span>
+              <h2>Work {work.no}</h2>
+              <p>Watch the complete audiovisual work. Presented through YouTube.</p>
+              <a href={`https://www.youtube.com/watch?v=${work.videoId}`} target="_blank" rel="noreferrer">Watch on YouTube ↗</a>
             </div>
           </article>
         ))}
