@@ -1,7 +1,8 @@
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
 
 export default function InfoPage() {
-  const portraitSrc = process.env.GITHUB_ACTIONS === "true"
+  const usesProjectPath = process.env.GITHUB_ACTIONS === "true" && process.env.CUSTOM_DOMAIN !== "true";
+  const portraitSrc = usesProjectPath
     ? "/Haoran-wang-portfolio/haoran-wang.jpg"
     : "/haoran-wang.jpg";
 
