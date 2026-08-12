@@ -1,13 +1,17 @@
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
 
 export default function InfoPage() {
+  const portraitSrc = process.env.GITHUB_ACTIONS === "true"
+    ? "/Haoran-wang-portfolio/haoran-wang.jpg"
+    : "/haoran-wang.jpg";
+
   return (
     <main className="site-frame" id="top">
       <SiteHeader />
       <PageIntro index="01" title="Info" text="Background, education and areas of ongoing musical research." />
       <section className="info-layout">
         <div className="portrait-field">
-          <img src="/haoran-wang.jpg" alt="Haoran Wang on the coast" />
+          <img src={portraitSrc} alt="Haoran Wang on the coast" />
           <span>PORTRAIT / ÉTRETAT, FR</span>
         </div>
         <div className="bio-copy">
