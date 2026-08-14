@@ -39,4 +39,3 @@ export function PageIntro({ index }: { index: string; title?: string; text?: str
     </header>
   );
 }
-import Link from "next/link";
