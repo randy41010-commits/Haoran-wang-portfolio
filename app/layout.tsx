@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { LocaleProvider } from "./i18n";
 
 export const metadata: Metadata = {
   title: { default: "Haoran Wang — Sound Portfolio", template: "%s — Haoran Wang" },
@@ -27,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
+    <html lang="de">
+      <body className="antialiased"><LocaleProvider>{children}</LocaleProvider></body>
     </html>
   );
 }

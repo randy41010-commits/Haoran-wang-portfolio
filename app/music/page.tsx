@@ -1,4 +1,6 @@
+"use client";
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
+import { useLocale } from "../i18n";
 
 // Curated SoundCloud selection by Haoran Wang.
 
@@ -26,14 +28,16 @@ function Track({ no, title, url }: { no: string; title: string; url: string }) {
 }
 
 export default function MusicPage() {
+  const { locale } = useLocale();
+  const labels = locale === "de" ? ["Traditionelle Komposition", "Weitere Musik", "Auf SoundCloud öffnen ↗"] : locale === "zh" ? ["传统作曲", "其他音乐", "在 SoundCloud 打开 ↗"] : ["Traditional Composition", "Other Music", "Open on SoundCloud ↗"];
   return (
     <main className="site-frame" id="top">
       <SiteHeader />
       <PageIntro index="03" title="Music" text="Compositions and recorded works." />
       <section className="music-list" aria-label="Music works">
-        <h2 className="music-category">Traditional Composition</h2>
+        <h2 className="music-category">{labels[0]}</h2>
         {traditionalCompositions.map((track) => <Track key={track.no} {...track} />)}
-        <h2 className="music-category music-category-secondary">Other Music</h2>
+        <h2 className="music-category music-category-secondary">{labels[1]}</h2>
         {otherMusic.map((track) => <Track key={track.no} {...track} />)}
       </section>
       <SiteFooter />
