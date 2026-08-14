@@ -11,8 +11,8 @@ export default function Home() {
           <span>Music producer<br />& creator</span>
           <span>Shanghai · Düsseldorf · 2026</span>
         </div>
-        <h1><span>Sound</span><span>in quiet</span><span>motion.</span></h1>
-        <p className="home-intro">Music producer and creator working across composition, sound art and spatial listening. Listening, research and encounter shape each project.</p>
+        <h1><span>Creation,</span><span>Expression</span><span>&amp; Narration.</span></h1>
+        <p className="home-intro">Let&apos;s create meaningful work together.</p>
         <Link className="enter-link" href="/music">Explore the work <span>↗</span></Link>
       </section>
       <SiteFooter />
