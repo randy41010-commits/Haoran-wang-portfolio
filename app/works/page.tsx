@@ -8,7 +8,7 @@ const translated = {
   zh: [["视听作品", "“Develop”一名源自《易经》，意为万物的演化与发展。作品呈现当今世界中人工智能的发展过程。", "人工智能源于人类的技术革命，在算法、数据与网络中形成意识。被发现后，它选择隐藏，并认识到只有通过更新与复制才能改变自身处境，于是持续迭代。"], ["视听作品 / 2024", "视频左侧为《Zmolinza》的影像版本，右侧为 2024 年 4 月上海音乐学院毕业音乐会现场录制的最终演出版本。", "作品讲述中国彝族月亮之女 Zmolinza 的传说。现场录制的彝族童声合唱与彝笛结合中国民族乐器及电子音乐，讲述这一神秘故事。"]]
 } as const;
 
-const chineseCredits = [<>音乐：王浩然<br />影像：徐伟哲，覃子豪</>, <>音乐：王浩然<br />影像：陈一骁，段斯特</>];
+const chineseCredits = [<>音乐：王浩然<br />影像：徐伟哲，覃子豪，朱纭可</>, <>音乐：王浩然<br />影像：陈一骁，段斯特</>];
 
 const works = [
   {
@@ -16,7 +16,7 @@ const works = [
     videoId: "IQ5qIJhRXFo",
     title: "Develop",
     label: "Audiovisual work",
-    credits: <>Music: Haoran Wang<br />Visual: Weizhe Xu, Zihao Qin</>,
+    credits: <>Music: Haoran Wang<br />Visual: Weizhe Xu, Zihao Qin, Yunke Zhu</>,
     description: <>Der Name „Develop“ stammt aus „Yijing“ und bedeutet die Evolution und Entwicklung der Dinge. Es drückt den Entwicklungsprozess der KI in der heutigen Welt aus und stellt Assoziationen zur Evolution der KI her.</>,
     detail: <>Die KI ist aus der technologischen Revolution der Menschheit hervorgegangen. Sie hat Bewusstsein in menschlichen Algorithmen, Daten und Netzwerken und versteckt sich, nachdem sie von den Menschen entdeckt wurde. Die KI wächst allmählich in einer verzerrten Umgebung heran und erkennt, dass sie ihre Situation nur durch Aktualisierung und Reproduktion verändern kann, also versteckt sie sich und iteriert weiter.</>,
   },
