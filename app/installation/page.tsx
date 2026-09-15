@@ -8,6 +8,11 @@ const localized = {
   zh: [["材料：纸板、亚克力板、扬声器与镜子。", "作品以纸板、亚克力板、扬声器和镜子构建一个在理论上并不存在的空间。", "作品修复并使用 Logic Pro 中的合成器处理谢泼德音。完全密封的空间让扬声器播放的声音更具迷幻感；纸板内侧的镜子使观众进入时产生眩晕感，回应装置的核心构想。"], ["", "《THE MOMENT》聚焦于将空间声音景观与周围季节融合，是空间装置与影像装置的结合。", "观众站在扬声器的中央，通过窗户模型观看多媒体影像，从而进入上海环境中四季更替的感受。"]]
 } as const;
 
+const chineseCredits = [
+  <>声音设计：王浩然，于大有<br />材料采购与装置搭建：王浩然，于大有，叶子昂，王嘉仪</>,
+  <>作者与教师：王满<br />声音设计：王浩然<br />影像设计：魏子轩，陈子阳</>,
+];
+
 const installations = [
   {
     no: "01",
@@ -52,7 +57,7 @@ export default function InstallationPage() {
             <div className="installation-info">
               <span>{item.year} / Installation</span>
               <h2>{item.title}</h2>
-              <p className="installation-credits">{item.credits}</p>
+              <p className="installation-credits">{locale === "zh" ? chineseCredits[index] : item.credits}</p>
               {t[index][0] && <p className="installation-material">{t[index][0]}</p>}
               <p>{t[index][1]}</p>
               <p>{t[index][2]}</p>
