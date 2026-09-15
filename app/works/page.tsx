@@ -8,6 +8,8 @@ const translated = {
   zh: [["视听作品", "“Develop”一名源自《易经》，意为万物的演化与发展。作品呈现当今世界中人工智能的发展过程。", "人工智能源于人类的技术革命，在算法、数据与网络中形成意识。被发现后，它选择隐藏，并认识到只有通过更新与复制才能改变自身处境，于是持续迭代。"], ["视听作品 / 2024", "视频左侧为《Zmolinza》的影像版本，右侧为 2024 年 4 月上海音乐学院毕业音乐会现场录制的最终演出版本。", "作品讲述中国彝族月亮之女 Zmolinza 的传说。现场录制的彝族童声合唱与彝笛结合中国民族乐器及电子音乐，讲述这一神秘故事。"]]
 } as const;
 
+const chineseCredits = [<>音乐：王浩然<br />影像：徐伟哲，覃子豪</>, <>音乐：王浩然<br />影像：陈一骁，段斯特</>];
+
 const works = [
   {
     no: "001",
@@ -51,7 +53,7 @@ export default function WorksPage() {
             <div className="work-data">
               <span>{t[index][0]}</span><span>{work.no}</span>
               <h2>{work.title}</h2>
-              <p className="work-credits">{work.credits}</p>
+              <p className="work-credits">{locale === "zh" ? chineseCredits[index] : work.credits}</p>
               <p>{t[index][1]}</p>
               <p>{t[index][2]}</p>
               <a href={`https://www.youtube.com/watch?v=${work.videoId}`} target="_blank" rel="noreferrer">{watch}</a>
