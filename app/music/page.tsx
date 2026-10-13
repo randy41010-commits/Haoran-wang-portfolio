@@ -13,6 +13,8 @@ const traditionalCompositions = [
 const otherMusic = [
   { no: "04", title: "Jerking Motion", url: "https://soundcloud.com/wang-haoran-962901748/jerking-motion" },
   { no: "05", title: "Hear · Voices", url: "https://soundcloud.com/wang-haoran-962901748/hear-voices" },
+  { no: "06", title: "Ein Traum von Jerusalem", url: "https://soundcloud.com/wang-haoran-962901748/ein-traum-von-jerusalem" },
+  { no: "07", title: "arbeiten, wir arbeiten", url: "https://soundcloud.com/wang-haoran-962901748/arbeiten-wir-arbeiten" },
 ];
 
 function Track({ no, title, url }: { no: string; title: string; url: string }) {
