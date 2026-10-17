@@ -20,9 +20,20 @@ export default function InfoPage() {
       <SiteHeader />
       <PageIntro index="01" />
       <section className="info-layout">
-        <div className="portrait-field">
-          <img src={portraitSrc} alt="Haoran Wang on the coast" />
-          <span>PORTRAIT / ÉTRETAT, FR</span>
+        <div className="info-media-stack">
+          <div className="portrait-field">
+            <img src={portraitSrc} alt="Haoran Wang on the coast" />
+            <span>PORTRAIT / ÉTRETAT, FR</span>
+          </div>
+          <div className="info-video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/9ihIJZLMaKc"
+              title="Haoran Wang — introduction video"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
         </div>
         <div className="bio-copy">
           <p className="lead">{text[0]}</p>
