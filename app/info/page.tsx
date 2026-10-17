@@ -20,31 +20,31 @@ export default function InfoPage() {
       <SiteHeader />
       <PageIntro index="01" />
       <section className="info-layout">
-        <div className="info-media-stack">
-          <div className="portrait-field">
-            <img src={portraitSrc} alt="Haoran Wang on the coast" />
-            <span>PORTRAIT / ÉTRETAT, FR</span>
-          </div>
-          <div className="info-video">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/9ihIJZLMaKc"
-              title="Haoran Wang — introduction video"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
+        <div className="portrait-field">
+          <img src={portraitSrc} alt="Haoran Wang on the coast" />
+          <span>PORTRAIT / ÉTRETAT, FR</span>
         </div>
-        <div className="bio-copy">
+        <div className="bio-copy info-intro-copy">
           <p className="lead">{text[0]}</p>
           <p>{text[1]}</p>
           <p>{text[2]}</p>
+        </div>
+        <div className="bio-copy info-practice-copy">
           <p>{text[3]}</p>
           <dl>
             <div><dt>Practice</dt><dd>Music Production<br />Sound Art<br />Composition<br />Creative Research</dd></div>
             <div><dt>Education</dt><dd>Shanghai Conservatory of Music<br />Robert Schumann Hochschule Düsseldorf</dd></div>
             <div><dt>Languages</dt><dd>Chinese<br />English<br />German</dd></div>
           </dl>
+        </div>
+        <div className="info-video">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/9ihIJZLMaKc"
+            title="Haoran Wang — introduction video"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
         </div>
       </section>
       <section className="statement-band"><p>Listening closely.<br />Shaping sound.<br />Opening space.</p></section>
