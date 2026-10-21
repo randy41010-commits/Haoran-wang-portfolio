@@ -3,12 +3,28 @@ import { useLocale } from "../i18n";
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
 
 const translated = {
-  de: [["Audiovisuelle Arbeit", "Der Name „Develop“ stammt aus dem Yijing und bedeutet die Evolution und Entwicklung der Dinge. Das Werk reflektiert die Entwicklung der KI in der heutigen Welt.", "KI ist aus der technologischen Revolution der Menschheit hervorgegangen. Sie entwickelt sich in Algorithmen, Daten und Netzwerken, verbirgt sich nach ihrer Entdeckung und erkennt, dass sie ihre Lage nur durch Aktualisierung und Reproduktion verändern kann."], ["Audiovisuelle Arbeit / 2024", "Links ist die Video-Fassung von Zmolinza zu sehen, rechts die finale Live-Fassung, aufgenommen bei der Abschlussaufführung des Shanghai Conservatory of Music im April 2024.", "Das Werk erzählt die Legende von Zmolinza, der Mondtochter des chinesischen Yi-Volkes. Live aufgezeichneter Kinderchor und Flöte der Yi verbinden sich mit chinesischen traditionellen Instrumenten und elektronischer Musik."]],
-  en: [["Audiovisual work", "The name “Develop” comes from the Yijing and refers to the evolution and development of things. It reflects the development of AI in today’s world.", "AI emerged from humanity’s technological revolution. It develops in algorithms, data and networks, hides after being discovered, and recognises that it can only change its situation through updating and reproduction."], ["Audiovisual work / 2024", "The left side of this video is the video version of Zmolinza, and the right side is the final live version recorded at the graduation performance of Shanghai Conservatory of Music in April 2024.", "This work tells the legend of Zmolinza, the daughter of the moon of the Yi people in China. Live-recorded Yi children’s chorus and Yi flute combine with Chinese traditional instruments and electronic music."]],
-  zh: [["视听作品", "“Develop”一名源自《易经》，意为万物的演化与发展。作品呈现当今世界中人工智能的发展过程。", "人工智能源于人类的技术革命，在算法、数据与网络中形成意识。被发现后，它选择隐藏，并认识到只有通过更新与复制才能改变自身处境，于是持续迭代。"], ["视听作品 / 2024", "视频左侧为《Zmolinza》的影像版本，右侧为 2024 年 4 月上海音乐学院毕业音乐会现场录制的最终演出版本。", "作品讲述中国彝族月亮之女 Zmolinza 的传说。现场录制的彝族童声合唱与彝笛结合中国民族乐器及电子音乐，讲述这一神秘故事。"]]
+  de: [
+    ["Audiovisuelle Arbeit", "Der Name „Develop“ stammt aus dem Yijing und bedeutet die Evolution und Entwicklung der Dinge. Das Werk reflektiert die Entwicklung der KI in der heutigen Welt.", "KI ist aus der technologischen Revolution der Menschheit hervorgegangen. Sie entwickelt sich in Algorithmen, Daten und Netzwerken, verbirgt sich nach ihrer Entdeckung und erkennt, dass sie ihre Lage nur durch Aktualisierung und Reproduktion verändern kann."],
+    ["Audiovisuelle Arbeit / 2024", "Links ist die Video-Fassung von Zmolinza zu sehen, rechts die finale Live-Fassung, aufgenommen bei der Abschlussaufführung des Shanghai Conservatory of Music im April 2024.", "Das Werk erzählt die Legende von Zmolinza, der Mondtochter des chinesischen Yi-Volkes. Live aufgezeichneter Kinderchor und Flöte der Yi verbinden sich mit chinesischen traditionellen Instrumenten und elektronischer Musik."],
+    ["Audiovisuelle Performance / 2026", "Ein Traum von Jerusalem ist eine audiovisuelle Performance zwischen Traum und Erwachen. Klang, Licht und projizierte Architektur formen einen Raum, der sich ständig verändert, auflöst und neu zusammensetzt.", "Jerusalem erscheint dabei als imaginierter Ort – fern, vielschichtig und niemals vollständig greifbar."]
+  ],
+  en: [
+    ["Audiovisual work", "The name “Develop” comes from the Yijing and refers to the evolution and development of things. It reflects the development of AI in today’s world.", "AI emerged from humanity’s technological revolution. It develops in algorithms, data and networks, hides after being discovered, and recognises that it can only change its situation through updating and reproduction."],
+    ["Audiovisual work / 2024", "The left side of this video is the video version of Zmolinza, and the right side is the final live version recorded at the graduation performance of Shanghai Conservatory of Music in April 2024.", "This work tells the legend of Zmolinza, the daughter of the moon of the Yi people in China. Live-recorded Yi children’s chorus and Yi flute combine with Chinese traditional instruments and electronic music."],
+    ["Audiovisual performance / 2026", "Ein Traum von Jerusalem is an audiovisual performance between dream and waking. Sound, light and projected architecture form a space that continually changes, dissolves and reassembles.", "Jerusalem appears as an imagined place — distant, layered and never fully graspable."]
+  ],
+  zh: [
+    ["视听作品", "“Develop”一名源自《易经》，意为万物的演化与发展。作品呈现当今世界中人工智能的发展过程。", "人工智能源于人类的技术革命，在算法、数据与网络中形成意识。被发现后，它选择隐藏，并认识到只有通过更新与复制才能改变自身处境，于是持续迭代。"],
+    ["视听作品 / 2024", "视频左侧为《Zmolinza》的影像版本，右侧为 2024 年 4 月上海音乐学院毕业音乐会现场录制的最终演出版本。", "作品讲述中国彝族月亮之女 Zmolinza 的传说。现场录制的彝族童声合唱与彝笛结合中国民族乐器及电子音乐，讲述这一神秘故事。"],
+    ["视听表演 / 2026", "《Ein Traum von Jerusalem》是一场介于梦与醒之间的视听表演。声音、光线与投影建筑共同构成一个不断变化、消解并重新组合的空间。", "耶路撒冷在其中呈现为一个被想象的地点：遥远、多层，且永远无法被完全把握。"]
+  ]
 } as const;
 
-const chineseCredits = [<>音乐：王浩然<br />影像：徐伟哲，覃子豪，朱纭可</>, <>音乐：王浩然<br />影像：陈一骁，段斯特</>];
+const chineseCredits = [
+  <>音乐：王浩然<br />影像：徐伟哲，覃子豪，朱纭可</>,
+  <>音乐：王浩然<br />影像：陈一骁，段斯特</>,
+  <>作者：王浩然、Xinyun Zhang<br />音乐与表演：王浩然<br />影像与现场控制：Xinyun Zhang<br />视频制作：Emil Theodor Felhofer</>
+];
 
 const works = [
   {
@@ -28,6 +44,13 @@ const works = [
     credits: <>Music: Haoran Wang<br />Visual: Yixiao Chen, Site Duan</>,
     description: <>The left side of this video is the video version of Zmolinza, and the right side is the final live version recorded at the graduation performance of Shanghai Conservatory of Music in April 2024.</>,
     detail: <>This work tells the story of the legend of the Yi people in China — Zmolinza, the daughter of the moon. The music combines live-recorded Yi children&apos;s chorus and Yi flute with Chinese traditional instruments and electronic music to tell this mysterious Yi story in audiovisual language.</>,
+  },
+  {
+    no: "003",
+    videoId: "eA0j6-CQ-HY",
+    title: "Ein Traum von Jerusalem",
+    label: "Audiovisual performance / 2026",
+    credits: <>Authors: Haoran Wang &amp; Xinyun Zhang<br />Music &amp; Performance: Haoran Wang<br />Visuals &amp; Field Control: Xinyun Zhang<br />Video Credits: Emil Theodor Felhofer</>,
   },
 ];
 
