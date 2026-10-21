@@ -35,6 +35,8 @@ const installations = [
   },
 ];
 
+const orderedInstallations = installations.map((item, index) => ({ item, index })).sort((a, b) => Number(b.item.year) - Number(a.item.year));
+
 export default function InstallationPage() {
   const { locale } = useLocale(); const t = localized[locale]; const watch = locale === "de" ? "Auf YouTube ansehen ↗" : locale === "zh" ? "在 YouTube 观看 ↗" : "Watch on YouTube ↗";
   return (
@@ -42,7 +44,7 @@ export default function InstallationPage() {
       <SiteHeader />
       <PageIntro index="04" />
       <section className="installation-list" aria-label="Installations">
-        {installations.map((item, index) => (
+        {orderedInstallations.map(({ item, index }) => (
           <article className="installation-item installation-video" key={item.no}>
             <div className="installation-view">
               <iframe
