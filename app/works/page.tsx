@@ -29,6 +29,7 @@ const chineseCredits = [
 const works = [
   {
     no: "001",
+    year: 2023,
     videoId: "IQ5qIJhRXFo",
     title: "Develop",
     label: "Audiovisual work",
@@ -38,6 +39,7 @@ const works = [
   },
   {
     no: "002",
+    year: 2024,
     videoId: "hm10Rev353k",
     title: "Zmolinza",
     label: "Audiovisual work / 2024",
@@ -47,12 +49,15 @@ const works = [
   },
   {
     no: "003",
+    year: 2026,
     videoId: "eA0j6-CQ-HY",
     title: "Ein Traum von Jerusalem",
     label: "Audiovisual performance / 2026",
     credits: <>Authors: Haoran Wang &amp; Xinyun Zhang<br />Music &amp; Performance: Haoran Wang<br />Visuals &amp; Field Control: Xinyun Zhang<br />Video Credits: Emil Theodor Felhofer</>,
   },
 ];
+
+const orderedWorks = works.map((work, index) => ({ work, index })).sort((a, b) => b.work.year - a.work.year);
 
 export default function WorksPage() {
   const { locale } = useLocale(); const t = translated[locale]; const watch = locale === "de" ? "Auf YouTube ansehen ↗" : locale === "zh" ? "在 YouTube 观看 ↗" : "Watch on YouTube ↗";
@@ -61,7 +66,7 @@ export default function WorksPage() {
       <SiteHeader />
       <PageIntro index="02" />
       <section className="work-index" aria-label="Selected works">
-        {works.map((work, index) => (
+        {orderedWorks.map(({ work, index }) => (
           <article className="work-row work-video" key={work.no}>
             <div className="work-media">
               <iframe
