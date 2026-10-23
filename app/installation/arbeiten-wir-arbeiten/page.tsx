@@ -56,8 +56,8 @@ const detailCopy = {
 } as const;
 
 const galleryGroups = [
-  ["/arbeiten-galerie/performance-5837.jpg", "/arbeiten-galerie/04.jpg", "/arbeiten-galerie/05.jpg"],
-  ["/arbeiten-galerie/06.jpg", "/arbeiten-galerie/07.jpg", "/arbeiten-galerie/08.jpg", "/arbeiten-galerie/09.jpg", "/arbeiten-galerie/10.jpg", "/arbeiten-galerie/11.jpg", "/arbeiten-galerie/rakes-5826.jpg", "/arbeiten-galerie/rakes-5827.jpg"],
+  ["/arbeiten-galerie/04.jpg", "/arbeiten-galerie/05.jpg", "/arbeiten-galerie/performance-5837-v2.jpg"],
+  ["/arbeiten-galerie/06.jpg", "/arbeiten-galerie/07.jpg", "/arbeiten-galerie/08.jpg", "/arbeiten-galerie/09.jpg", "/arbeiten-galerie/10.jpg", "/arbeiten-galerie/11.jpg", "/arbeiten-galerie/rakes-5826-v2.jpg", "/arbeiten-galerie/rakes-5827-v2.jpg"],
 ] as const;
 
 function ArbeitenGallery() {
@@ -80,6 +80,7 @@ function ArbeitenGallery() {
         </figure>
         <button type="button" onClick={next} aria-label={t.next}>→</button>
       </div>
+      <p className="gallery-credit">{locale === "zh" ? "摄影：" : locale === "de" ? "Fotografie: " : "Photography: "}Phillip Schulze</p>
       <div className="gallery-groups" aria-label="Photo groups">
         {galleryGroups.map((photos, index) => <button type="button" key={index} onClick={() => switchGroup(index)} className={groupIndex === index ? "active" : ""}>{t.group} {String(index + 2).padStart(2, "0")} <span>{photos.length}</span></button>)}
       </div>
