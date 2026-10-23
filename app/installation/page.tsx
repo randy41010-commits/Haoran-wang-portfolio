@@ -3,6 +3,24 @@ import Link from "next/link";
 import { useLocale } from "../i18n";
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
 
+const arbeitenIntro = {
+  de: {
+    credits: <>Performance: Haoran Wang, Jasper van der Hövel<br />Computersteuerung: Xinyun Zhang</>,
+    material: "Rechen, MPU6050, ESP32, 3,3-V-Batteriestromversorgung, Kontaktmikrofon.",
+    paragraphs: ["Die Farmen-Symphonie, komponiert für den Steingarten.", "An den Harken sind Sensoren angebracht. Die Signale der Sensoren (ESP32) werden vom Computer über die Arduino IDE erkannt und anschließend in Max/MSP verarbeitet und in Klänge umgewandelt. Die erzeugten Klänge werden über ein 8-Kanal-Lautsprechersystem wiedergegeben.", "Die Performer können durch verschiedene Bewegungen der Harken, wie zum Beispiel Verschieben, Drehen oder Rotieren, die Klänge in Echtzeit steuern und miteinander interagieren."],
+  },
+  en: {
+    credits: <>Performance: Haoran Wang, Jasper van der Hövel<br />Computer control: Xinyun Zhang</>,
+    material: "Rakes, MPU6050, ESP32, 3.3 V battery power supply, contact microphone.",
+    paragraphs: ["The farming symphony, composed for the rock garden.", "Sensors are attached to the rakes. The sensor signals (ESP32) are detected by the computer through the Arduino IDE, then processed in Max/MSP and converted into sounds. The resulting sounds are played through an eight-channel loudspeaker system.", "Through different movements of the rakes, such as shifting, turning or rotating, the performers can control the sounds in real time and interact with one another."],
+  },
+  zh: {
+    credits: <>表演：王浩然，Jasper van der Hövel<br />电脑控制：Xinyun Zhang</>,
+    material: "耙子、MPU6050、ESP32、3.3 V 电池电源、接触式麦克风。",
+    paragraphs: ["为石头花园而作的农场交响曲。", "耙子上安装了传感器。传感器（ESP32）的信号通过 Arduino IDE 被电脑识别，随后在 Max/MSP 中进行处理并转换为声音。生成的声音通过八声道扬声器系统播放。", "表演者可以通过移动、转动或旋转耙子等不同动作，实时控制声音，并与彼此互动。"],
+  },
+} as const;
+
 const localized = {
   de: [["Material: Karton, Acrylplatten, Lautsprecher und Spiegel.", "Der Entwurf sah vor, mit Karton, Acrylplatten, Lautsprechern und Spiegeln einen theoretisch nicht existierenden Raum zu schaffen.", "Ein Shepard-Ton wurde rekonstruiert und mit einem Synthesizer in Logic Pro bearbeitet. Der vollständig versiegelte Raum macht den über Lautsprecher wiedergegebenen Ton noch psychedelischer. Spiegel im Inneren des Kartons erzeugen beim Betreten ein Schwindelgefühl und spiegeln damit die Konzeption der Installation."], ["", "„THE MOMENT“ konzentriert sich auf die Verbindung räumlicher Klanglandschaften mit den umgebenden Jahreszeiten und kombiniert Raum- und Videoinstallation.", "Die Betrachtenden stehen in der Mitte der Lautsprecher und sehen multimediale Bilder durch ein Fenstermodell. So werden sie in die Jahreszeiten der Umgebung von Shanghai versetzt."], ["", "", ""]],
   en: [["Materials: cardboard, acrylic sheets, loudspeakers and mirrors.", "This installation uses cardboard, acrylic sheets, loudspeakers and mirrors to create a theoretically non-existent space.", "A Shepard tone was reconstructed and processed with a synthesizer in Logic Pro. The fully sealed room makes the sound played through the loudspeakers even more psychedelic. Mirrors inside the cardboard create a feeling of dizziness when entering, reflecting the installation’s concept."], ["", "“THE MOMENT” focuses on integrating spatial soundscapes with the surrounding seasons, combining a spatial installation with video.", "Visitors stand in the middle of the loudspeakers and view multimedia images through a window model, placing them within the seasons of Shanghai’s environment."], ["", "", ""]],
@@ -72,6 +90,11 @@ export default function InstallationPage() {
               {t[index][0] && <p className="installation-material">{t[index][0]}</p>}
               {t[index][1] && <p>{t[index][1]}</p>}
               {t[index][2] && <p>{t[index][2]}</p>}
+              {item.no === "03" && <>
+                <p className="installation-credits">{arbeitenIntro[locale].credits}</p>
+                <p className="installation-material">{arbeitenIntro[locale].material}</p>
+                {arbeitenIntro[locale].paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+              </>}
               <a href={`https://www.youtube.com/watch?v=${item.videoId}`} target="_blank" rel="noreferrer">{watch}</a>
             </div>
           </article>

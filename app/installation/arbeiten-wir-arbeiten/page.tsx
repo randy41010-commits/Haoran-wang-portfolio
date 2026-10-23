@@ -56,9 +56,8 @@ const detailCopy = {
 } as const;
 
 const galleryGroups = [
-  ["/arbeiten-galerie/01.jpg", "/arbeiten-galerie/02.jpg"],
-  ["/arbeiten-galerie/03.jpg", "/arbeiten-galerie/04.jpg", "/arbeiten-galerie/05.jpg"],
-  ["/arbeiten-galerie/06.jpg", "/arbeiten-galerie/07.jpg", "/arbeiten-galerie/08.jpg", "/arbeiten-galerie/09.jpg", "/arbeiten-galerie/10.jpg", "/arbeiten-galerie/11.jpg"],
+  ["/arbeiten-galerie/performance-5837.jpg", "/arbeiten-galerie/04.jpg", "/arbeiten-galerie/05.jpg"],
+  ["/arbeiten-galerie/06.jpg", "/arbeiten-galerie/07.jpg", "/arbeiten-galerie/08.jpg", "/arbeiten-galerie/09.jpg", "/arbeiten-galerie/10.jpg", "/arbeiten-galerie/11.jpg", "/arbeiten-galerie/rakes-5826.jpg", "/arbeiten-galerie/rakes-5827.jpg"],
 ] as const;
 
 function ArbeitenGallery() {
@@ -73,7 +72,7 @@ function ArbeitenGallery() {
 
   return (
     <section className="installation-gallery" aria-label="Arbeiten, wir arbeiten photo documentation">
-      <div className="gallery-meta"><span>{t.photos}</span><span>{String(groupIndex + 1).padStart(2, "0")} / 03 · {String(photoIndex + 1).padStart(2, "0")} / {String(group.length).padStart(2, "0")}</span></div>
+      <div className="gallery-meta"><span>{t.photos}</span><span>{t.group} {String(groupIndex + 2).padStart(2, "0")} · {String(photoIndex + 1).padStart(2, "0")} / {String(group.length).padStart(2, "0")}</span></div>
       <div className="gallery-stage">
         <button type="button" onClick={previous} aria-label={t.previous}>←</button>
         <figure>
@@ -82,7 +81,7 @@ function ArbeitenGallery() {
         <button type="button" onClick={next} aria-label={t.next}>→</button>
       </div>
       <div className="gallery-groups" aria-label="Photo groups">
-        {galleryGroups.map((photos, index) => <button type="button" key={index} onClick={() => switchGroup(index)} className={groupIndex === index ? "active" : ""}>{t.group} {String(index + 1).padStart(2, "0")} <span>{photos.length}</span></button>)}
+        {galleryGroups.map((photos, index) => <button type="button" key={index} onClick={() => switchGroup(index)} className={groupIndex === index ? "active" : ""}>{t.group} {String(index + 2).padStart(2, "0")} <span>{photos.length}</span></button>)}
       </div>
     </section>
   );
@@ -111,6 +110,9 @@ export default function ArbeitenDetailPage() {
             <p className="artwork-lead">{t.lead}</p>
             {t.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
           </div>
+        </div>
+        <div className="artwork-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/HxIikpebSoE" title="Haoran Wang — Arbeiten, wir arbeiten" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
         </div>
         <ArbeitenGallery />
       </article>
