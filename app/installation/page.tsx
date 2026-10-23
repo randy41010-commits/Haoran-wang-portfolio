@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import Link from "next/link";
 import { useLocale } from "../i18n";
 import { PageIntro, SiteFooter, SiteHeader } from "../site-shell";
 
@@ -46,37 +46,6 @@ const installations = [
 
 const orderedInstallations = installations.map((item, index) => ({ item, index })).sort((a, b) => Number(b.item.year) - Number(a.item.year));
 
-const galleryGroups = [
-  ["/arbeiten-galerie/01.jpg", "/arbeiten-galerie/02.jpg"],
-  ["/arbeiten-galerie/03.jpg", "/arbeiten-galerie/04.jpg", "/arbeiten-galerie/05.jpg"],
-  ["/arbeiten-galerie/06.jpg", "/arbeiten-galerie/07.jpg", "/arbeiten-galerie/08.jpg", "/arbeiten-galerie/09.jpg", "/arbeiten-galerie/10.jpg", "/arbeiten-galerie/11.jpg"],
-] as const;
-
-function ArbeitenGallery() {
-  const [groupIndex, setGroupIndex] = useState(0);
-  const [photoIndex, setPhotoIndex] = useState(0);
-  const group = galleryGroups[groupIndex];
-  const switchGroup = (nextGroup: number) => { setGroupIndex(nextGroup); setPhotoIndex(0); };
-  const previous = () => setPhotoIndex((photoIndex - 1 + group.length) % group.length);
-  const next = () => setPhotoIndex((photoIndex + 1) % group.length);
-
-  return (
-    <section className="installation-gallery" aria-label="Arbeiten, wir arbeiten photo documentation">
-      <div className="gallery-meta"><span>PHOTO DOCUMENTATION</span><span>{String(groupIndex + 1).padStart(2, "0")} / 03 · {String(photoIndex + 1).padStart(2, "0")} / {String(group.length).padStart(2, "0")}</span></div>
-      <div className="gallery-stage">
-        <button type="button" onClick={previous} aria-label="Previous photograph">←</button>
-        <figure>
-          <img src={group[photoIndex]} alt={`Arbeiten, wir arbeiten — photograph ${photoIndex + 1}`} />
-        </figure>
-        <button type="button" onClick={next} aria-label="Next photograph">→</button>
-      </div>
-      <div className="gallery-groups" aria-label="Photo groups">
-        {galleryGroups.map((photos, index) => <button type="button" key={index} onClick={() => switchGroup(index)} className={groupIndex === index ? "active" : ""}>SET {String(index + 1).padStart(2, "0")} <span>{photos.length}</span></button>)}
-      </div>
-    </section>
-  );
-}
-
 export default function InstallationPage() {
   const { locale } = useLocale(); const t = localized[locale]; const watch = locale === "de" ? "Auf YouTube ansehen ↗" : locale === "zh" ? "在 YouTube 观看 ↗" : "Watch on YouTube ↗";
   return (
@@ -98,14 +67,13 @@ export default function InstallationPage() {
             </div>
             <div className="installation-info">
               <span>{item.year} / Installation</span>
-              <h2>{item.title}</h2>
+              <div className="installation-title-row"><h2>{item.title}</h2>{item.no === "03" && <Link className="installation-detail-link" href="/installation/arbeiten-wir-arbeiten/">{locale === "zh" ? "详情 ↗" : locale === "de" ? "Details ↗" : "Details ↗"}</Link>}</div>
               {(locale === "zh" ? chineseCredits[index] : item.credits) && <p className="installation-credits">{locale === "zh" ? chineseCredits[index] : item.credits}</p>}
               {t[index][0] && <p className="installation-material">{t[index][0]}</p>}
               {t[index][1] && <p>{t[index][1]}</p>}
               {t[index][2] && <p>{t[index][2]}</p>}
               <a href={`https://www.youtube.com/watch?v=${item.videoId}`} target="_blank" rel="noreferrer">{watch}</a>
             </div>
-            {item.no === "03" && <ArbeitenGallery />}
           </article>
         ))}
       </section>
