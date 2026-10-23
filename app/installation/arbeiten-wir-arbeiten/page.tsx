@@ -56,8 +56,8 @@ const detailCopy = {
 } as const;
 
 const galleryGroups = [
-  ["/arbeiten-galerie/04.jpg", "/arbeiten-galerie/05.jpg", "/arbeiten-galerie/performance-5837-v2.jpg"],
-  ["/arbeiten-galerie/06.jpg", "/arbeiten-galerie/07.jpg", "/arbeiten-galerie/08.jpg", "/arbeiten-galerie/09.jpg", "/arbeiten-galerie/10.jpg", "/arbeiten-galerie/11.jpg", "/arbeiten-galerie/rakes-5826-v2.jpg", "/arbeiten-galerie/rakes-5827-v2.jpg"],
+  ["/arbeiten-galerie/04.jpg", "/arbeiten-galerie/05.jpg", "/arbeiten-galerie/performance-5837.png"],
+  ["/arbeiten-galerie/06.jpg", "/arbeiten-galerie/07.jpg", "/arbeiten-galerie/08.jpg", "/arbeiten-galerie/09.jpg", "/arbeiten-galerie/10.jpg", "/arbeiten-galerie/11.jpg", "/arbeiten-galerie/rakes-5826.png", "/arbeiten-galerie/rakes-5827.png"],
 ] as const;
 
 function ArbeitenGallery() {
