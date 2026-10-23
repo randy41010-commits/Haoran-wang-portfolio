@@ -15,7 +15,7 @@ const arbeitenIntro = {
     paragraphs: ["The farming symphony, composed for the rock garden.", "Sensors are attached to the rakes. The sensor signals (ESP32) are detected by the computer through the Arduino IDE, then processed in Max/MSP and converted into sounds. The resulting sounds are played through an eight-channel loudspeaker system.", "Through different movements of the rakes, such as shifting, turning or rotating, the performers can control the sounds in real time and interact with one another."],
   },
   zh: {
-    credits: <>表演：王浩然，Jasper van der Hövel<br />电脑控制：Xinyun Zhang</>,
+    credits: <>表演：王浩然，Jasper van der Hövel<br />电脑控制：张欣云</>,
     material: "耙子、MPU6050、ESP32、3.3 V 电池电源、接触式麦克风。",
     paragraphs: ["为石头花园而作的农场交响曲。", "耙子上安装了传感器。传感器（ESP32）的信号通过 Arduino IDE 被电脑识别，随后在 Max/MSP 中进行处理并转换为声音。生成的声音通过八声道扬声器系统播放。", "表演者可以通过移动、转动或旋转耙子等不同动作，实时控制声音，并与彼此互动。"],
   },
@@ -49,7 +49,7 @@ const installations = [
     title: "The Moment",
     year: "2024",
     videoId: "KUXaac8QKwQ",
-    credits: <>Author &amp; Teacher: Wang Man<br />Sound Design: Haoran Wang<br />Video Design: Yixuan Wei, Ziyang Chen</>,
+    credits: <>Author &amp; Teacher: Wang Man<br />Sound Design: Haoran Wang<br />Video Design: Zixuan Wei, Ziyang Chen</>,
     description: <>„THE MOMENT“ konzentriert sich auf die Integration von räumlichen Klanglandschaften mit den umgebenden Jahreszeiten und ist eine Kombination aus Raum- und Videoinstallationen.</>,
     detail: <>Der Betrachter steht in der Mitte der Lautsprecher und sieht die multimedialen Bilder durch das Fenstermodell, wodurch er sich in die Jahreszeiten der Umwelt in Shanghai hineinversetzt.</>,
   },

@@ -23,7 +23,7 @@ const translated = {
 const chineseCredits = [
   <>音乐：王浩然<br />影像：徐伟哲，覃子豪，朱纭可</>,
   <>音乐：王浩然<br />影像：陈一骁，段斯特</>,
-  <>作者：王浩然、Xinyun Zhang<br />音乐与表演：王浩然<br />影像与现场控制：Xinyun Zhang<br />视频制作：Emil Theodor Felhofer</>
+  <>作者：王浩然、张欣云<br />音乐与表演：王浩然<br />影像与现场控制：张欣云<br />视频制作：Emil Theodor Felhofer</>
 ];
 
 const works = [

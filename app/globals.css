@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.nav-contact { display:inline-flex; align-items:center; gap:12px; white-space:nowrap; }
+.site-header nav .nav-contact .secret-entry { color:#686860; font:13px/1 var(--font-geist-mono); margin:0; }
+.site-header nav .nav-contact .secret-entry:hover,.site-header nav .nav-contact .secret-entry:focus-visible { color:#e1d7bf; }
+
 .artwork-video { width:100%; aspect-ratio:16/9; background:#000; margin-bottom:48px; }
 .artwork-video iframe { display:block; width:100%; height:100%; border:0; }
 .gallery-credit { margin:16px 0 24px; text-align:center; font-size:14px; line-height:1.6; color:var(--muted); }

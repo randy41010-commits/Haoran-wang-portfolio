@@ -10,10 +10,13 @@ export function SiteHeader() {
       <Link className="wordmark" href="/" aria-label="Haoran Wang home">HAORAN WANG</Link>
       <nav aria-label="Primary navigation">
         {navigation.map((href, index) => (
-          <Link href={href} key={href}><sup>0{index + 1}</sup>{t.nav[index]}</Link>
+          href === "/kontakt" ? <span className="nav-contact" key={href}>
+            <Link href={href}><sup>0{index + 1}</sup>{t.nav[index]}</Link>
+            <Link className="secret-entry" href="/secret" aria-label="Hidden page">?</Link>
+          </span> : <Link href={href} key={href}><sup>0{index + 1}</sup>{t.nav[index]}</Link>
         ))}
       </nav>
-      <div className="header-tools"><Link className="secret-entry" href="/secret" aria-label="Hidden page">?</Link><span className="header-note">SOUND / PORTFOLIO / 2026</span><div className="language-switch" aria-label="Language"><button onClick={() => setLocale("de")} className={locale === "de" ? "active" : ""}><span className="language-flag" aria-hidden="true">🇩🇪</span>DE</button><button onClick={() => setLocale("en")} className={locale === "en" ? "active" : ""}><span className="language-flag" aria-hidden="true">🇬🇧</span>EN</button><button onClick={() => setLocale("zh")} className={locale === "zh" ? "active" : ""}><span className="language-flag" aria-hidden="true">🇨🇳</span>中文</button></div></div>
+      <div className="header-tools"><span className="header-note">SOUND / PORTFOLIO / 2026</span><div className="language-switch" aria-label="Language"><button onClick={() => setLocale("de")} className={locale === "de" ? "active" : ""}><span className="language-flag" aria-hidden="true">🇩🇪</span>DE</button><button onClick={() => setLocale("en")} className={locale === "en" ? "active" : ""}><span className="language-flag" aria-hidden="true">🇬🇧</span>EN</button><button onClick={() => setLocale("zh")} className={locale === "zh" ? "active" : ""}><span className="language-flag" aria-hidden="true">🇨🇳</span>中文</button></div></div>
     </header>
   );
 }

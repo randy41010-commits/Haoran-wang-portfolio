@@ -101,7 +101,7 @@ export default function ArbeitenDetailPage() {
         </div>
         <div className="artwork-story-row">
           <div className="artwork-credits">
-            <p>{t.performance}: {locale === "zh" ? "王浩然" : "Haoran Wang"}, Jasper van der Hövel<br />{t.computer}: Xinyun Zhang</p>
+            <p>{t.performance}: {locale === "zh" ? "王浩然" : "Haoran Wang"}, Jasper van der Hövel<br />{t.computer}: {locale === "zh" ? "张欣云" : "Xinyun Zhang"}</p>
             <h2>{t.materials}</h2>
             <p>{t.material}</p>
           </div>
