@@ -60,30 +60,25 @@ const galleryGroups = [
   ["/arbeiten-galerie/06.jpg", "/arbeiten-galerie/07.jpg", "/arbeiten-galerie/08.jpg", "/arbeiten-galerie/09.jpg", "/arbeiten-galerie/10.jpg", "/arbeiten-galerie/11.jpg", "/arbeiten-galerie/rakes-5826.png", "/arbeiten-galerie/rakes-5827.png"],
 ] as const;
 
-function ArbeitenGallery() {
+function ArbeitenGallery({ groupIndex }: { groupIndex: 0 | 1 }) {
   const { locale } = useLocale();
   const t = detailCopy[locale];
-  const [groupIndex, setGroupIndex] = useState(0);
   const [photoIndex, setPhotoIndex] = useState(0);
   const group = galleryGroups[groupIndex];
-  const switchGroup = (nextGroup: number) => { setGroupIndex(nextGroup); setPhotoIndex(0); };
-  const previous = () => setPhotoIndex((photoIndex - 1 + group.length) % group.length);
-  const next = () => setPhotoIndex((photoIndex + 1) % group.length);
+  const previous = () => setPhotoIndex(index => (index - 1 + group.length) % group.length);
+  const next = () => setPhotoIndex(index => (index + 1) % group.length);
 
   return (
-    <section className="installation-gallery" aria-label="Arbeiten, wir arbeiten photo documentation">
-      <div className="gallery-meta"><span>{t.photos}</span><span>{t.group} {String(groupIndex + 2).padStart(2, "0")} · {String(photoIndex + 1).padStart(2, "0")} / {String(group.length).padStart(2, "0")}</span></div>
+    <section className="installation-gallery artwork-gallery" aria-label={`${t.photos} — ${t.group} ${groupIndex + 1}`}>
+      <div className="gallery-meta"><span>{t.group} {groupIndex + 1}</span><span aria-live="polite">{String(photoIndex + 1).padStart(2, "0")} / {String(group.length).padStart(2, "0")}</span></div>
       <div className="gallery-stage">
         <button type="button" onClick={previous} aria-label={t.previous}>←</button>
         <figure>
-          <img src={group[photoIndex]} alt={`Arbeiten, wir arbeiten — photograph ${photoIndex + 1}`} />
+          <img src={group[photoIndex]} alt={`Arbeiten, wir arbeiten — ${t.group} ${groupIndex + 1}, ${photoIndex + 1}`} loading="lazy" />
         </figure>
         <button type="button" onClick={next} aria-label={t.next}>→</button>
       </div>
       <p className="gallery-credit">{locale === "zh" ? "摄影：" : locale === "de" ? "Fotografie: " : "Photography: "}Phillip Schulze</p>
-      <div className="gallery-groups" aria-label="Photo groups">
-        {galleryGroups.map((photos, index) => <button type="button" key={index} onClick={() => switchGroup(index)} className={groupIndex === index ? "active" : ""}>{t.group} {String(index + 2).padStart(2, "0")} <span>{photos.length}</span></button>)}
-      </div>
     </section>
   );
 }
@@ -101,21 +96,24 @@ export default function ArbeitenDetailPage() {
           <span>2026 / Installation</span>
           <h1>Arbeiten, wir arbeiten</h1>
         </header>
-        <div className="artwork-description">
+        <div className="artwork-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/HxIikpebSoE" title="Haoran Wang — Arbeiten, wir arbeiten" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+        </div>
+        <div className="artwork-story-row">
           <div className="artwork-credits">
             <p>{t.performance}: {locale === "zh" ? "王浩然" : "Haoran Wang"}, Jasper van der Hövel<br />{t.computer}: Xinyun Zhang</p>
             <h2>{t.materials}</h2>
             <p>{t.material}</p>
           </div>
+          <ArbeitenGallery groupIndex={0} />
+        </div>
+        <div className="artwork-story-row">
+          <ArbeitenGallery groupIndex={1} />
           <div className="artwork-copy">
             <p className="artwork-lead">{t.lead}</p>
             {t.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
           </div>
         </div>
-        <div className="artwork-video">
-          <iframe src="https://www.youtube-nocookie.com/embed/HxIikpebSoE" title="Haoran Wang — Arbeiten, wir arbeiten" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
-        </div>
-        <ArbeitenGallery />
       </article>
       <SiteFooter />
     </main>
