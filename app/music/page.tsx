@@ -18,13 +18,19 @@ const otherMusic = [
 ];
 
 function Track({ no, title, url }: { no: string; title: string; url: string }) {
+  const { locale } = useLocale();
+  const chineseTitles: Record<string, string> = {
+    "01": "珠江渔女", "02": "影子", "03": "漂浮", "04": "抽搐运动",
+    "05": "幻·听", "06": "耶路撒冷的梦", "07": "劳动，我们劳动",
+  };
+  const displayTitle = locale === "zh" ? chineseTitles[no] : title;
   const embedUrl = `https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}&color=%23161616&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false`;
   return (
     <article className="music-item">
       <div className="soundcloud-player">
-        <iframe title={`${title} — SoundCloud`} src={embedUrl} allow="autoplay" loading="lazy" />
+        <iframe title={`${displayTitle} — SoundCloud`} src={embedUrl} allow="autoplay" loading="lazy" />
       </div>
-      <div className="music-info"><span>{no} / SOUND</span><h2>{title}</h2><a href={url} target="_blank" rel="noreferrer">Open on SoundCloud ↗</a></div>
+      <div className="music-info"><span>{no} / SOUND</span><h2>{displayTitle}</h2><a href={url} target="_blank" rel="noreferrer">Open on SoundCloud ↗</a></div>
     </article>
   );
 }

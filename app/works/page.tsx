@@ -14,9 +14,9 @@ const translated = {
     ["Audiovisual performance / 2026", "Ein Traum von Jerusalem is an audiovisual performance between dream and waking. Sound, light and projected architecture form a space that continually changes, dissolves and reassembles.", "Jerusalem appears as an imagined place — distant, layered and never fully graspable."]
   ],
   zh: [
-    ["视听作品", "“Develop”一名源自《易经》，意为万物的演化与发展。作品呈现当今世界中人工智能的发展过程。", "人工智能源于人类的技术革命，在算法、数据与网络中形成意识。被发现后，它选择隐藏，并认识到只有通过更新与复制才能改变自身处境，于是持续迭代。"],
-    ["视听作品 / 2024", "视频左侧为《Zmolinza》的影像版本，右侧为 2024 年 4 月上海音乐学院毕业音乐会现场录制的最终演出版本。", "作品讲述中国彝族月亮之女 Zmolinza 的传说。现场录制的彝族童声合唱与彝笛结合中国民族乐器及电子音乐，讲述这一神秘故事。"],
-    ["视听表演 / 2026", "《Ein Traum von Jerusalem》是一场介于梦与醒之间的视听表演。声音、光线与投影建筑共同构成一个不断变化、消解并重新组合的空间。", "耶路撒冷在其中呈现为一个被想象的地点：遥远、多层，且永远无法被完全把握。"]
+    ["视听作品", "“大衍”一名源自《易经》，意为万物的演化与发展。作品呈现当今世界中人工智能的发展过程。", "人工智能源于人类的技术革命，在算法、数据与网络中形成意识。被发现后，它选择隐藏，并认识到只有通过更新与复制才能改变自身处境，于是持续迭代。"],
+    ["视听作品 / 2024", "视频左侧为《兹莫领扎》的影像版本，右侧为 2024 年 4 月上海音乐学院毕业音乐会现场录制的最终演出版本。", "作品讲述中国彝族月亮之女兹莫领扎的传说。现场录制的彝族童声合唱与彝笛结合中国民族乐器及电子音乐，讲述这一神秘故事。"],
+    ["视听表演 / 2026", "《耶路撒冷的梦》是一场介于梦与醒之间的视听表演。声音、光线与投影建筑共同构成一个不断变化、消解并重新组合的空间。", "耶路撒冷在其中呈现为一个被想象的地点：遥远、多层，且永远无法被完全把握。"]
   ]
 } as const;
 
@@ -32,6 +32,7 @@ const works = [
     year: 2023,
     videoId: "IQ5qIJhRXFo",
     title: "Develop",
+    titleZh: "大衍",
     label: "Audiovisual work",
     credits: <>Music: Haoran Wang<br />Visual: Weizhe Xu, Zihao Qin, Yunke Zhu</>,
     description: <>Der Name „Develop“ stammt aus „Yijing“ und bedeutet die Evolution und Entwicklung der Dinge. Es drückt den Entwicklungsprozess der KI in der heutigen Welt aus und stellt Assoziationen zur Evolution der KI her.</>,
@@ -42,6 +43,7 @@ const works = [
     year: 2024,
     videoId: "hm10Rev353k",
     title: "Zmolinza",
+    titleZh: "兹莫领扎",
     label: "Audiovisual work / 2024",
     credits: <>Music: Haoran Wang<br />Visual: Yixiao Chen, Site Duan</>,
     description: <>The left side of this video is the video version of Zmolinza, and the right side is the final live version recorded at the graduation performance of Shanghai Conservatory of Music in April 2024.</>,
@@ -52,6 +54,7 @@ const works = [
     year: 2026,
     videoId: "eA0j6-CQ-HY",
     title: "Ein Traum von Jerusalem",
+    titleZh: "耶路撒冷的梦",
     label: "Audiovisual performance / 2026",
     credits: <>Authors: Haoran Wang &amp; Xinyun Zhang<br />Music &amp; Performance: Haoran Wang<br />Visuals &amp; Field Control: Xinyun Zhang<br />Video Credits: Emil Theodor Felhofer</>,
   },
@@ -80,7 +83,7 @@ export default function WorksPage() {
             </div>
             <div className="work-data">
               <span>{t[index][0]}</span><span>{work.no}</span>
-              <h2>{work.title}</h2>
+              <h2>{locale === "zh" ? work.titleZh : work.title}</h2>
               <p className="work-credits">{locale === "zh" ? chineseCredits[index] : work.credits}</p>
               <p>{t[index][1]}</p>
               <p>{t[index][2]}</p>

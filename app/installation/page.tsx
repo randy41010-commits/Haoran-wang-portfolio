@@ -37,6 +37,7 @@ const installations = [
   {
     no: "01",
     title: "Tai Chi",
+    titleZh: "太极",
     year: "2023",
     videoId: "pcCegXxbYxs",
     credits: <>Sound Design: Haoran Wang, Dayou Yu<br />Material purchase and installation: Haoran Wang, Dayou Yu, Ziang Ye, Jiayi Wang</>,
@@ -47,6 +48,7 @@ const installations = [
   {
     no: "02",
     title: "The Moment",
+    titleZh: "The Moment",
     year: "2024",
     videoId: "KUXaac8QKwQ",
     credits: <>Author &amp; Teacher: Wang Man<br />Sound Design: Haoran Wang<br />Video Design: Zixuan Wei, Ziyang Chen</>,
@@ -56,6 +58,7 @@ const installations = [
   {
     no: "03",
     title: "Arbeiten, wir arbeiten",
+    titleZh: "劳动，我们劳动",
     year: "2026",
     videoId: "HxIikpebSoE",
     credits: "",
@@ -85,7 +88,7 @@ export default function InstallationPage() {
             </div>
             <div className="installation-info">
               <span>{item.year} / Installation</span>
-              <div className="installation-title-row"><h2>{item.title}</h2>{item.no === "03" && <Link className="installation-detail-link" href="/installation/arbeiten-wir-arbeiten/">{locale === "zh" ? "详情 ↗" : locale === "de" ? "Details ↗" : "Details ↗"}</Link>}</div>
+              <div className="installation-title-row"><h2>{locale === "zh" ? item.titleZh : item.title}</h2>{item.no === "03" && <Link className="installation-detail-link" href="/installation/arbeiten-wir-arbeiten/">{locale === "zh" ? "详情 ↗" : locale === "de" ? "Details ↗" : "Details ↗"}</Link>}</div>
               {(locale === "zh" ? chineseCredits[index] : item.credits) && <p className="installation-credits">{locale === "zh" ? chineseCredits[index] : item.credits}</p>}
               {t[index][0] && <p className="installation-material">{t[index][0]}</p>}
               {t[index][1] && <p>{t[index][1]}</p>}

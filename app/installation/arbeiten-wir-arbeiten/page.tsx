@@ -94,7 +94,7 @@ export default function ArbeitenDetailPage() {
         <Link className="artwork-back" href="/installation/">{t.back}</Link>
         <header className="artwork-heading">
           <span>2026 / Installation</span>
-          <h1>Arbeiten, wir arbeiten</h1>
+          <h1>{locale === "zh" ? "劳动，我们劳动" : "Arbeiten, wir arbeiten"}</h1>
         </header>
         <div className="artwork-video">
           <iframe src="https://www.youtube-nocookie.com/embed/HxIikpebSoE" title="Haoran Wang — Arbeiten, wir arbeiten" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
