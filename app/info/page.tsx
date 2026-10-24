@@ -28,9 +28,7 @@ const content = {
 
 export default function InfoPage() {
   const { locale } = useLocale(); const text = content[locale];
-  const portraitSrc = process.env.GITHUB_ACTIONS === "true"
-    ? "/Haoran-wang-portfolio/haoran-wang.jpg"
-    : "/haoran-wang.jpg";
+  const portraitSrc = "/haoran-wang.jpg";
 
   return (
     <main className="site-frame" id="top">
